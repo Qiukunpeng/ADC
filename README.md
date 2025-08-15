@@ -79,8 +79,7 @@ python tutorial_inference.py
 ```
 
 ### 📣 Acknowledgements
-This repository is developed based on [ControlNet](https://github.com/lllyasviel/ControlNet) and [Siamese-Diffusion](https://github.com/Qiukunpeng/Siamese-Diffusion).  
-It further integrates several state-of-the-art segmentation models, including [nnU-Net](https://github.com/MIC-DKFZ/nnUNet), [SANet](https://github.com/weijun-arc/SANet), and [Polyp-PVT](https://github.com/DengPingFan/Polyp-PVT).
+This repository is developed based on [ControlNet](https://github.com/lllyasviel/ControlNet) and [Siamese-Diffusion](https://github.com/Qiukunpeng/Siamese-Diffusion). It further integrates several state-of-the-art segmentation models, including [nnU-Net](https://github.com/MIC-DKFZ/nnUNet), [SANet](https://github.com/weijun-arc/SANet), and [Polyp-PVT](https://github.com/DengPingFan/Polyp-PVT).
 
 ### 📖 Citation
 If you find our work useful in your research or if you use parts of this code, please consider citing our paper:
