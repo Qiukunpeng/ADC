@@ -12,7 +12,7 @@
 
 ### 🚀 **Superiority Demonstration**
 
-#### Kidney Tumor Fast Convergence
+#### Fast Convergence
 ![Kidney Tumor Fast Convergence](images/figure2.png)
 
 Compared with [Siamese-Diffusion](https://github.com/Qiukunpeng/Siamese-Diffusion), the proposed approach slightly increases training memory usage due to the joint training of a teacher model, which provides stronger prior guidance for the student model, ultimately accelerating its convergence.  
