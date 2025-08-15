@@ -15,8 +15,7 @@
 #### Kidney Tumor Fast Convergence
 ![Kidney Tumor Fast Convergence](images/figure2.png)
 
-Compared with [Siamese-Diffusion](https://github.com/Qiukunpeng/Siamese-Diffusion), the proposed approach slightly increases training memory usage due to the joint training of a teacher model,  
-which provides stronger prior guidance for the student model, ultimately accelerating its convergence.  
+Compared with [Siamese-Diffusion](https://github.com/Qiukunpeng/Siamese-Diffusion), the proposed approach slightly increases training memory usage due to the joint training of a teacher model, which provides stronger prior guidance for the student model, ultimately accelerating its convergence.  
 
 Even without using the plug-and-play `Online-Augmentation` module from [Siamese-Diffusion](https://github.com/Qiukunpeng/Siamese-Diffusion), our method achieves competitive performance on [Polyp-PVT](https://github.com/DengPingFan/Polyp-PVT).
 
