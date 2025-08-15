@@ -48,8 +48,7 @@ We evaluated our method on three public datasets: [Polyps](https://github.com/De
 
 ### 🏋️‍♂️ Training
 
-💡 **Note:**  
-The core contribution code has been integrated into `cldm.py`.  
+💡 **Note:** The core contribution code has been integrated into `cldm.py`.  
 Corresponding improvements to the model architecture should be made in `ldm/modules/diffusionmodules/openaimodel.py`, and the configuration must be updated in `models/cldm_v15.yaml`.  
 
 In particular, the parameter initialization method from the original version is no longer applicable.  
