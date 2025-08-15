@@ -12,31 +12,16 @@
 
 ### 🚀 **Practical Examples**
 
-![Polyp Images Comparison](images/figure2.png)
+#### Kidney Tumor Fast Convergence
+![Kidney Tumor Fast Convergence](images/figure2.png)
 
-<details>
-<summary>▶ Click to expand more comparison: Polyp Images</summary>
+### 🖼️ Visualization Results
 
-<!-- Polyp Images -->
-![Polyp Example](images/figure3.png)
+#### Kidney Tumor Visualization
+![Kidney Tumor Visualization](images/figure3.png)
 
-</details>
-
-<details>
-<summary>▶ Click to expand comparison: ISIC2016 Images</summary>
-
-<!-- ISIC2016 Images -->
-![ISIC2016 Example](images/figure4.png)
-
-</details>
-
-<details>
-<summary>▶ Click to expand comparison: ISIC2018 Images</summary>
-
-<!-- ISIC2018 Images -->
-![ISIC2018 Example](images/figure5.png)
-
-</details>
+#### Polyp Visualization
+![Polyp Visualization](images/figure4.png)
 
 ### 🛠️ Requirements
 The usual installation steps involve the following commands, they should set up the correct CUDA version and all the python packages:
@@ -49,7 +34,7 @@ pip install deepspeed
 ```
 
 ### 🗂️ Data and Structure
-We evaluated our method on three public datasets: [Polyps](https://github.com/DengPingFan/PraNet) (as provided by the PraNet project), [ISIC2016](https://challenge.isic-archive.com/landing/2016/), and [ISIC2018](https://challenge.isic-archive.com/landing/2018/).
+We evaluated our method on three public datasets: [Polyps](https://github.com/DengPingFan/PraNet) (as provided by the PraNet project), and [Kidney Tumor](https://github.com/neheller/kits19/).
 ```bash
 --data
   --images
@@ -58,21 +43,6 @@ We evaluated our method on three public datasets: [Polyps](https://github.com/De
 ```
 
 ### 🏋️‍♂️ Training
-  
-💡 **Note:** All improvements have been integrated into `cldm.py`, and the `DHI` module is implemented in `dhi.py`. Both are located within the `cldm` folder.
-
-🔥 **Recommendation**
-
-The **DHI** module is a plug-and-play enhancement recommended for all **ControlNet-based** setups.
-
-It significantly accelerates convergence for datasets with large **domain gaps** from pretrained data, such as:
-
-- **Medical segmentation images**  
-- **Anomaly detection images**
-- ... 
-
-Especially effective when jointly fine-tuning the Stable Diffusion UNet decoder.
-
 Here are example commands for training:
 ```bash
 # Initialize ControlNet with the pretrained UNet encoder weights from Stable Diffusion,  
@@ -97,27 +67,16 @@ python tool_merge_control.py
 python tutorial_inference.py
 ```
 
-### 🖼️ Visualization Results of Ablation Study
-![Ablation Study Visualization](images/figure6.png)
-
-<details>
-<summary>▶ Click to expand more ablation results: Polyp Images</summary>
-
-<!-- Polyp Images -->
-![Polyp Example](images/figure7.png)
-
-</details>
-
 ### 📣 Acknowledgements
-This code is developed based on [ControlNet](https://github.com/lllyasviel/ControlNet) and incorporates several segmentation models, including [SANet](https://github.com/weijun-arc/SANet), [Polyp-PVT](https://github.com/DengPingFan/Polyp-PVT), and [CTNet](https://github.com/Fhujinwu/CTNet).
+This code is developed based on [ControlNet](https://github.com/lllyasviel/ControlNet) and incorporates several segmentation models, including [nnUNet](https://github.com/MIC-DKFZ/nnUNet), [SANet](https://github.com/weijun-arc/SANet), and [Polyp-PVT](https://github.com/DengPingFan/Polyp-PVT).
 
 ### 📖 Citation
 If you find our work useful in your research or if you use parts of this code, please consider citing our paper:
 ```bash
-@article{qiu2025noise,
-  title={Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation},
-  author={Qiu, Kunpeng and Gao, Zhiqiang and Zhou, Zhiying and Sun, Mingjie and Guo, Yongxin},
-  journal={arXiv preprint arXiv:2505.06068},
+@article{qiu2025adaptively,
+  title={Adaptively Distilled ControlNet: Accelerated Training and Superior Sampling for Medical Image Synthesis},
+  author={Qiu, Kunpeng and Zhou, Zhiying and Guo, Yongxin},
+  journal={arXiv preprint arXiv:2507.23652},
   year={2025}
 }
 ```
