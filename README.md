@@ -10,10 +10,17 @@
 <img src="images/figure1.png", width="1000">
 </div>
 
-### 🚀 **Practical Examples**
+### 🚀 **Superiority Demonstration**
 
 #### Kidney Tumor Fast Convergence
 ![Kidney Tumor Fast Convergence](images/figure2.png)
+
+Compared with [Siamese-Diffusion](https://github.com/Qiukunpeng/Siamese-Diffusion),  
+the proposed approach slightly increases training memory usage due to the joint training of a teacher model,  
+which provides stronger prior guidance for the student model, ultimately accelerating its convergence.  
+
+Even without using the plug-and-play `Online-Augmentation` module from [Siamese-Diffusion](https://github.com/Qiukunpeng/Siamese-Diffusion),  
+our method achieves competitive performance on [Polyp-PVT](https://github.com/DengPingFan/Polyp-PVT).
 
 ### 🖼️ Visualization Results
 
@@ -43,6 +50,16 @@ We evaluated our method on three public datasets: [Polyps](https://github.com/De
 ```
 
 ### 🏋️‍♂️ Training
+
+💡 **Note:**  
+The core contribution code has been integrated into `cldm.py`.  
+Corresponding improvements to the model architecture should be made in `ldm/modules/diffusionmodules/openaimodel.py`, and the configuration must be updated in `models/cldm_v15.yaml`.  
+
+In particular, the parameter initialization method from the original version is no longer applicable.  
+A new initialization scheme has been implemented in `tool_add_control.py` to generate `control_sd15.ckpt`.  
+
+Inspired by [Siamese-Diffusion](https://github.com/Qiukunpeng/Siamese-Diffusion), the **DHI** module is integrated as a default component.
+
 Here are example commands for training:
 ```bash
 # Initialize ControlNet with the pretrained UNet encoder weights from Stable Diffusion,  
@@ -68,7 +85,8 @@ python tutorial_inference.py
 ```
 
 ### 📣 Acknowledgements
-This code is developed based on [ControlNet](https://github.com/lllyasviel/ControlNet) and incorporates several segmentation models, including [nnUNet](https://github.com/MIC-DKFZ/nnUNet), [SANet](https://github.com/weijun-arc/SANet), and [Polyp-PVT](https://github.com/DengPingFan/Polyp-PVT).
+This repository is developed based on [ControlNet](https://github.com/lllyasviel/ControlNet) and [Siamese-Diffusion](https://github.com/Qiukunpeng/Siamese-Diffusion).  
+It further integrates several state-of-the-art segmentation models, including [nnU-Net](https://github.com/MIC-DKFZ/nnUNet), [SANet](https://github.com/weijun-arc/SANet), and [Polyp-PVT](https://github.com/DengPingFan/Polyp-PVT).
 
 ### 📖 Citation
 If you find our work useful in your research or if you use parts of this code, please consider citing our paper:
